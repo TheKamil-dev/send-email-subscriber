@@ -7,7 +7,7 @@ Update Environment variables  in .env file.
 Create Databse in mysql and update DB_DATABASE 
 
 Change your email setting.
-`
+```
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.****.com
 MAIL_PORT=587
@@ -20,13 +20,16 @@ MAIL_FROM_NAME="${APP_NAME}"
 Change QUEUE_CONNECTION to
 
 QUEUE_CONNECTION=database
-`
+```
 
+```
 Run php artisan migrate
+```
 
+```
 Run website seeder
 php artisan db:seed
-
+```
 ## Job Run 
 
 Run following command to execute the queued jobs
