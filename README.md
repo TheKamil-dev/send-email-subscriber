@@ -16,7 +16,9 @@ MAIL_PASSWORD=****
 MAIL_ENCRYPTION=tls
 mail_from_address=****@****.com
 MAIL_FROM_NAME="${APP_NAME}"
+```
 
+```
 Change QUEUE_CONNECTION to
 
 QUEUE_CONNECTION=database
@@ -33,16 +35,19 @@ php artisan db:seed
 ## Job Run 
 
 Run following command to execute the queued jobs
+```
 php artisan queue:work or php artisan queue:listen
-
+```
 (Queue job use the Artisan command to send email.)
 
-To send email using artisan command use below command.
-php artisan subscriber:email {post_id}
 
+To send email using artisan command use below command.
+```
+php artisan subscriber:email {post_id}
+```
 ## Send email with diffrent methods from PostController.php
 (remove comments to send email using diffrent methods)
-
+```
 //Send Email using Event listner
 //PostCreated::dispatch($post);
 
@@ -52,4 +57,4 @@ dispatch(new SendEmailNotificationJob($post));
 // Send Email using schedule Job queue.
 //dispatch(new SendEmailNotificationJob($post))->delay(now()->addMinutes(10));
 
-
+```
