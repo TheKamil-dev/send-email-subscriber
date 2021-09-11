@@ -49,11 +49,14 @@ class PostController extends Controller
             "msg" =>"Post Created Successfully!",
             "status" => "success"
         ];
+
+        //Send Email using Event listner
         //PostCreated::dispatch($post);
 
+        // Send Email using Job queue
         dispatch(new SendEmailNotificationJob($post));
 
-        // For schedule Job queue.
+        // Send Email using schedule Job queue.
         //dispatch(new SendEmailNotificationJob($post))->delay(now()->addMinutes(10));
 
         return response()->json($msg);
