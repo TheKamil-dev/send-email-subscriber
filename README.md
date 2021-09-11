@@ -46,8 +46,9 @@ To send email using artisan command use below command.
 php artisan subscriber:email {post_id}
 ```
 ## Send email with diffrent methods from PostController.php
-(remove comments to send email using diffrent methods)
 ```
+(remove comments to send email using diffrent methods)
+
 //Send Email using Event listner
 //PostCreated::dispatch($post);
 
